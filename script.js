@@ -27,7 +27,7 @@ function Ico(link,name,subb){
   }
   
   let zk = create("div");
-  zk.appendChild(ico);
+  
   zk.classList.add("ed")
   document.getElementById("links").appendChild(zk);
   
@@ -37,19 +37,20 @@ function Ico(link,name,subb){
     link = subb;
   }
   
-  let img = create("img",{src:link},{width:`${screen.availWidth * 0.2}px`,margin:`${screen.availWidth * 0.025}px`});
+  let img = create("img",{src:link});
   
-  ico.appendChild(img);
-  
+  zk.appendChild(img);
+  zk.appendChild(ico);
+
   let ttt = create("p",{innerHTML:name});
   ico.appendChild(ttt);
 }
 
 document.getElementsByTagName("input")[0].addEventListener("keydown",(event)=>{
-  x = document.getElementsByTagName("input");
+  xzz = document.getElementsByTagName("input")[0];
   if(event.key == "Enter"){
-    let kz = x.value;
-    x.value = "";
+    let kz = xzz.value;
+    xzz.value = "";
     window.open(`https://suporte.dominioatendimento.com/central/faces/central-solucoes-resultados.html?moduloSolucao=13&palavraChave=${kz}`);
   }
 });
